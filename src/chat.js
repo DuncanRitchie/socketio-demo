@@ -13,8 +13,8 @@ app.use(express.static(publicDir))
 io.on("connection",(socket)=>{
     console.log("New connection with WebSocket")
     socket.emit("message","Welcome")
-    socket.on("message",()=>{
-        
+    socket.on("message",(message)=>{
+        io.emit("message",message)
     })
 })
 
