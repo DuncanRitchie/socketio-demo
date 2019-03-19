@@ -10,5 +10,6 @@ button = document.getElementById("button")
 button.addEventListener("click",(e)=>{
     e.preventDefault();
     console.log(input.value)
+    socket.emit("message",input.value)
     input.value=""
 })
